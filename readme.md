@@ -1,49 +1,35 @@
-# Express
+# Get Request
 
-Install node. Express won't work without node.
+Means you're trying to retrieve a resource on a server.
 
-Also have npm install as well.
+The req parameter gives you all the information about the client that's making the request.
 
-Also have a text editor like VS code.
+You can get info such as cookies, ip address, headers.
 
-Also download postman to make post and pull requests.
-
-create a new directory and call it express_tutorial
+The response object is responsible for sending response back to the client.
 
 ```
-mkdir express_tutorial
+const express = require('express');
 
-cd express_tutorial
+const app = express();
+const PORT = 3001;
 
-npm init -y
+app.listen(PORT, () => console.log(`Running express server on Port ${PORT}!`))
 
-npm i express
+//But we don't have any route defined, we cannot visit any route currently.
 
-code .
-
-npm i -D nodemon
+app.get('/groceries', (req, res) => {
+    res.send([
+        {
+        item: 'milk',
+        quantity: 2,
+        },
+        {
+        item: 'cereal',
+        quantity: 4,
+        },
+    ]);
+});
 ```
 
-Create a file called src
-
-Then create index.js
-
-Go to package.json and edit the scripts
-
-```
-"start": "node ./src/index.js",
-"dev": "nodemon ./src/index.js"
-```
-
-Run the script with 
-
-```
-npm run dev
-```
-
-edit index.js:
-
-```
-console.log("hello");
-```
-
+![Alt text](Screenshot_150.png)
