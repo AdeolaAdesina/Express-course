@@ -32,4 +32,5 @@ app.get('/groceries', (req, res) => {
 });
 ```
 
-![Alt text](Screenshot_150.png)
+![Screenshot_150](https://github.com/AdeolaAdesina/Express-course/assets/29931071/467cf4ab-87e0-4fa4-8d06-9113e83b6025)
+
